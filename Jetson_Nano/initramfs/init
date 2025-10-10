@@ -1,0 +1,24 @@
+#!/bin/dash
+# Init script for initramfs - dash as PID 1
+
+echo "Starting initramfs..."
+echo "Mounting essential filesystems..."
+
+# Mount essential filesystems
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t devtmpfs devtmpfs /dev
+
+# Create essential device nodes
+mknod /dev/console c 5 1
+mknod /dev/null c 1 3
+mknod /dev/zero c 1 5
+mknod /dev/tty c 5 0
+
+# Set up console
+echo "Console setup complete"
+echo "Starting dash as PID 1..."
+echo "PID: $$"
+
+# Execute dash as PID 1 with interactive shell
+exec /dash -i
