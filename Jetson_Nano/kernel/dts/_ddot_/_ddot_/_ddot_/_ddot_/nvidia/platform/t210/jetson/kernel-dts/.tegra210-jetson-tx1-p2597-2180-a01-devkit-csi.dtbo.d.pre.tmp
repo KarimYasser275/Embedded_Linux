@@ -1,0 +1,6 @@
+tegra210-jetson-tx1-p2597-2180-a01-devkit-csi.o: \
+ arch/arm64/boot/dts/../../../../nvidia/platform/t210/jetson/kernel-dts/tegra210-jetson-tx1-p2597-2180-a01-devkit-csi.dts \
+ nvidia/soc/tegra/kernel-include/dt-bindings/pinctrl/pinctrl-tegra.h \
+ nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra210-jetson-tx1-p2597-2180-a01-devkit.h \
+ nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra-gpio.h \
+ nvidia/soc/tegra/kernel-include/dt-bindings/gpio/gpio.h

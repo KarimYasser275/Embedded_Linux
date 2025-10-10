@@ -1,0 +1,7 @@
+tegra210-p3448-0000-p3449-0000-a01-adafruit-sph0645lm4h.o: \
+ arch/arm64/boot/dts/../../../../nvidia/platform/t210/porg/kernel-dts/tegra210-p3448-0000-p3449-0000-a01-adafruit-sph0645lm4h.dts \
+ nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra210-p3448-0000-p3449-0000-a01.h \
+ nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra-gpio.h \
+ nvidia/soc/tegra/kernel-include/dt-bindings/gpio/gpio.h \
+ nvidia/platform/tegra/common/kernel-dts/overlays/jetson-adafruit-sph0645lm4h.dts \
+ nvidia/soc/tegra/kernel-include/dt-bindings/pinctrl/pinctrl-tegra.h

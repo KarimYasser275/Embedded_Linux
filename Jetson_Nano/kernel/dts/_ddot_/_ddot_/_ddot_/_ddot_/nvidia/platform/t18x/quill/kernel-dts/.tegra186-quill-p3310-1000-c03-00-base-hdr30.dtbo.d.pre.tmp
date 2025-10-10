@@ -1,0 +1,6 @@
+tegra186-quill-p3310-1000-c03-00-base-hdr30.o: \
+ arch/arm64/boot/dts/../../../../nvidia/platform/t18x/quill/kernel-dts/tegra186-quill-p3310-1000-c03-00-base-hdr30.dts \
+ nvidia/soc/tegra/kernel-include/dt-bindings/pinctrl/pinctrl-tegra.h \
+ nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra186-quill-p3310-1000-c03-00-base.h \
+ nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra186-gpio.h \
+ nvidia/soc/tegra/kernel-include/dt-bindings/gpio/gpio.h

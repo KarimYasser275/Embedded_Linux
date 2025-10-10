@@ -1,0 +1,69 @@
+# 0 "arch/arm64/boot/dts/../../../../nvidia/platform/t210/jetson/kernel-dts/tegra210-jetson-tx1-p2597-2180-a01-devkit-hdr30.dts"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "arch/arm64/boot/dts/../../../../nvidia/platform/t210/jetson/kernel-dts/tegra210-jetson-tx1-p2597-2180-a01-devkit-hdr30.dts"
+# 22 "arch/arm64/boot/dts/../../../../nvidia/platform/t210/jetson/kernel-dts/tegra210-jetson-tx1-p2597-2180-a01-devkit-hdr30.dts"
+/dts-v1/;
+/plugin/;
+
+# 1 "./nvidia/soc/tegra/kernel-include/dt-bindings/pinctrl/pinctrl-tegra.h" 1
+# 26 "arch/arm64/boot/dts/../../../../nvidia/platform/t210/jetson/kernel-dts/tegra210-jetson-tx1-p2597-2180-a01-devkit-hdr30.dts" 2
+# 1 "./nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra210-jetson-tx1-p2597-2180-a01-devkit.h" 1
+# 10 "./nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra210-jetson-tx1-p2597-2180-a01-devkit.h"
+# 1 "./nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra-gpio.h" 1
+# 40 "./nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra-gpio.h"
+# 1 "./nvidia/soc/tegra/kernel-include/dt-bindings/gpio/gpio.h" 1
+# 41 "./nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra-gpio.h" 2
+# 11 "./nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra210-jetson-tx1-p2597-2180-a01-devkit.h" 2
+# 27 "arch/arm64/boot/dts/../../../../nvidia/platform/t210/jetson/kernel-dts/tegra210-jetson-tx1-p2597-2180-a01-devkit-hdr30.dts" 2
+
+/ {
+ overlay-name = "Jetson 30pin Header";
+ compatible = "nvidia,p2597-0000+p2180-1000";
+
+ fragment@0 {
+  target = <&pinmux>;
+  __overlay__ {
+   pinctrl-names = "default";
+   pinctrl-0 = <&jetson_io_pinmux>;
+   jetson_io_pinmux: exp-header-pinmux {
+    hdr30-pin23 {
+     nvidia,pins = "pk3";
+     nvidia,function = "i2s5b";
+     nvidia,pin-group = "i2s5";
+     nvidia,pin-label = "i2s5b_sclk";
+     nvidia,pull = <0>;
+     nvidia,tristate = <0>;
+     nvidia,enable-input = <1>;
+    };
+    hdr30-pin24 {
+     nvidia,pins = "pk2";
+     nvidia,function = "i2s5b";
+     nvidia,pin-group = "i2s5";
+     nvidia,pin-label = "i2s5b_dout";
+     nvidia,pull = <0>;
+     nvidia,tristate = <0>;
+     nvidia,enable-input = <0>;
+    };
+    hdr30-pin25 {
+     nvidia,pins = "pk1";
+     nvidia,function = "i2s5b";
+     nvidia,pin-group = "i2s5";
+     nvidia,pin-label = "i2s5b_din";
+     nvidia,pull = <1>;
+     nvidia,tristate = <1>;
+     nvidia,enable-input = <1>;
+    };
+    hdr30-pin26 {
+     nvidia,pins = "pk0";
+     nvidia,function = "i2s5b";
+     nvidia,pin-group = "i2s5";
+     nvidia,pin-label = "i2s5b_fs";
+     nvidia,pull = <0>;
+     nvidia,tristate = <0>;
+     nvidia,enable-input = <1>;
+    };
+   };
+  };
+ };
+};

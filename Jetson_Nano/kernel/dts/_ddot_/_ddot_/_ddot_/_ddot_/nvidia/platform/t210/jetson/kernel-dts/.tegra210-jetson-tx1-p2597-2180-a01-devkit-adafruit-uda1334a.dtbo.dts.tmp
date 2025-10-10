@@ -1,0 +1,61 @@
+# 0 "arch/arm64/boot/dts/../../../../nvidia/platform/t210/jetson/kernel-dts/tegra210-jetson-tx1-p2597-2180-a01-devkit-adafruit-uda1334a.dts"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "arch/arm64/boot/dts/../../../../nvidia/platform/t210/jetson/kernel-dts/tegra210-jetson-tx1-p2597-2180-a01-devkit-adafruit-uda1334a.dts"
+# 10 "arch/arm64/boot/dts/../../../../nvidia/platform/t210/jetson/kernel-dts/tegra210-jetson-tx1-p2597-2180-a01-devkit-adafruit-uda1334a.dts"
+/dts-v1/;
+/plugin/;
+
+# 1 "./nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra210-jetson-tx1-p2597-2180-a01-devkit.h" 1
+# 10 "./nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra210-jetson-tx1-p2597-2180-a01-devkit.h"
+# 1 "./nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra-gpio.h" 1
+# 40 "./nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra-gpio.h"
+# 1 "./nvidia/soc/tegra/kernel-include/dt-bindings/gpio/gpio.h" 1
+# 41 "./nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra-gpio.h" 2
+# 11 "./nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra210-jetson-tx1-p2597-2180-a01-devkit.h" 2
+# 14 "arch/arm64/boot/dts/../../../../nvidia/platform/t210/jetson/kernel-dts/tegra210-jetson-tx1-p2597-2180-a01-devkit-adafruit-uda1334a.dts" 2
+# 1 "./nvidia/platform/tegra/common/kernel-dts/overlays/jetson-adafruit-uda1334a.dts" 1
+# 10 "./nvidia/platform/tegra/common/kernel-dts/overlays/jetson-adafruit-uda1334a.dts"
+# 1 "./nvidia/soc/tegra/kernel-include/dt-bindings/pinctrl/pinctrl-tegra.h" 1
+# 11 "./nvidia/platform/tegra/common/kernel-dts/overlays/jetson-adafruit-uda1334a.dts" 2
+
+/ {
+ overlay-name = "Adafruit UDA1334A";
+ jetson-header-name = "Jetson 40pin Header";
+ compatible = "nvidia,p2597-0000+p2180-1000";
+
+ fragment@0 {
+  target = <&pinmux>;
+  __overlay__ {
+   pinctrl-names = "default";
+   pinctrl-0 = <&jetson_io_pinmux>;
+
+   jetson_io_pinmux: exp-header-pinmux {
+    hdr40-pin12 {
+     nvidia,pins = "dap1_sclk_pb3";
+     nvidia,function = "i2s1";
+     nvidia,pull = <1>;
+     nvidia,tristate = <0>;
+     nvidia,enable-input = <1>;
+    };
+
+    hdr40-pin35 {
+     nvidia,pins = "dap1_fs_pb0";
+     nvidia,function = "i2s1";
+     nvidia,pull = <1>;
+     nvidia,tristate = <0>;
+     nvidia,enable-input = <1>;
+    };
+
+    hdr40-pin40 {
+     nvidia,pins = "dap1_dout_pb2";
+     nvidia,function = "i2s1";
+     nvidia,pull = <1>;
+     nvidia,tristate = <0>;
+     nvidia,enable-input = <0>;
+    };
+   };
+  };
+ };
+};
+# 15 "arch/arm64/boot/dts/../../../../nvidia/platform/t210/jetson/kernel-dts/tegra210-jetson-tx1-p2597-2180-a01-devkit-adafruit-uda1334a.dts" 2

@@ -1,0 +1,104 @@
+# 0 "arch/arm64/boot/dts/../../../../nvidia/platform/t210/porg/kernel-dts/tegra210-p3448-0000-p3449-0000-a01-respeaker-4-mic-lin-array.dts"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "arch/arm64/boot/dts/../../../../nvidia/platform/t210/porg/kernel-dts/tegra210-p3448-0000-p3449-0000-a01-respeaker-4-mic-lin-array.dts"
+# 10 "arch/arm64/boot/dts/../../../../nvidia/platform/t210/porg/kernel-dts/tegra210-p3448-0000-p3449-0000-a01-respeaker-4-mic-lin-array.dts"
+/dts-v1/;
+/plugin/;
+
+# 1 "./nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra210-p3448-0000-p3449-0000-a01.h" 1
+# 9 "./nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra210-p3448-0000-p3449-0000-a01.h"
+# 1 "./nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra-gpio.h" 1
+# 40 "./nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra-gpio.h"
+# 1 "./nvidia/soc/tegra/kernel-include/dt-bindings/gpio/gpio.h" 1
+# 41 "./nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra-gpio.h" 2
+# 10 "./nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra210-p3448-0000-p3449-0000-a01.h" 2
+# 14 "arch/arm64/boot/dts/../../../../nvidia/platform/t210/porg/kernel-dts/tegra210-p3448-0000-p3449-0000-a01-respeaker-4-mic-lin-array.dts" 2
+# 1 "./nvidia/platform/tegra/common/kernel-dts/overlays/jetson-respeaker-4-mic-lin-array.dts" 1
+# 9 "./nvidia/platform/tegra/common/kernel-dts/overlays/jetson-respeaker-4-mic-lin-array.dts"
+# 1 "./nvidia/soc/tegra/kernel-include/dt-bindings/pinctrl/pinctrl-tegra.h" 1
+# 10 "./nvidia/platform/tegra/common/kernel-dts/overlays/jetson-respeaker-4-mic-lin-array.dts" 2
+
+/ {
+ overlay-name = "ReSpeaker 4 Mic Linear Array";
+ jetson-header-name = "Jetson 40pin Header";
+ compatible = "nvidia,p3449-0000-a01+p3448-0000-a01";
+
+ fragment@0 {
+  target = <&hdr40_i2c1>;
+  __overlay__ {
+   #address-cells = <1>;
+   #size-cells = <0>;
+   ac108_a: ac10x-codec.1-0035@35{
+    compatible = "x-power,ac108_0";
+    reg = <0x35>;
+    data-protocol = <0>;
+    status = "okay";
+   };
+  };
+ };
+
+ fragment@1 {
+  target = <&tegra_sound>;
+  __overlay__ {
+   nvidia,audio-routing =
+    "x MIC1N", "x Mic",
+    "x MIC1P", "x Mic",
+    "x MIC2N", "x Mic",
+    "x MIC2P", "x Mic",
+    "x MIC3N", "x Mic",
+    "x MIC3P", "x Mic",
+    "x MIC4N", "x Mic",
+    "x MIC4P", "x Mic",
+    "x Capture", "x Mic";
+  };
+ };
+
+ fragment@2 {
+  target = <&hdr40_snd_link_i2s>;
+  __overlay__ {
+   link-name = "respeaker-4-mic-array";
+   codec-dai = <&ac108_a>;
+   codec-dai-name = "ac10x-codec0";
+   format = "dsp_a";
+   fsync-width = <0>;
+   bitclock-master;
+   frame-master;
+  };
+ };
+
+ fragment@3 {
+  target = <&pinmux>;
+  __overlay__ {
+   pinctrl-names = "default";
+   pinctrl-0 = <&jetson_io_pinmux>;
+
+   jetson_io_pinmux: exp-header-pinmux {
+    hdr40-pin12 {
+     nvidia,pins = "dap1_sclk_pb3";
+     nvidia,function = "i2s1";
+     nvidia,pull = <1>;
+     nvidia,tristate = <0>;
+     nvidia,enable-input = <1>;
+    };
+
+    hdr40-pin35 {
+     nvidia,pins = "dap1_fs_pb0";
+     nvidia,function = "i2s1";
+     nvidia,pull = <1>;
+     nvidia,tristate = <0>;
+     nvidia,enable-input = <1>;
+    };
+
+    hdr40-pin38 {
+     nvidia,pins = "dap1_din_pb1";
+     nvidia,function = "i2s1";
+     nvidia,pull = <1>;
+     nvidia,tristate = <1>;
+     nvidia,enable-input = <1>;
+    };
+   };
+  };
+ };
+};
+# 15 "arch/arm64/boot/dts/../../../../nvidia/platform/t210/porg/kernel-dts/tegra210-p3448-0000-p3449-0000-a01-respeaker-4-mic-lin-array.dts" 2

@@ -1,0 +1,101 @@
+# 0 "arch/arm64/boot/dts/../../../../nvidia/platform/t210/jetson/kernel-dts/tegra210-jetson-tx1-p2597-2180-a01-devkit-csi.dts"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "arch/arm64/boot/dts/../../../../nvidia/platform/t210/jetson/kernel-dts/tegra210-jetson-tx1-p2597-2180-a01-devkit-csi.dts"
+# 22 "arch/arm64/boot/dts/../../../../nvidia/platform/t210/jetson/kernel-dts/tegra210-jetson-tx1-p2597-2180-a01-devkit-csi.dts"
+/dts-v1/;
+/plugin/;
+
+# 1 "./nvidia/soc/tegra/kernel-include/dt-bindings/pinctrl/pinctrl-tegra.h" 1
+# 26 "arch/arm64/boot/dts/../../../../nvidia/platform/t210/jetson/kernel-dts/tegra210-jetson-tx1-p2597-2180-a01-devkit-csi.dts" 2
+# 1 "./nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra210-jetson-tx1-p2597-2180-a01-devkit.h" 1
+# 10 "./nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra210-jetson-tx1-p2597-2180-a01-devkit.h"
+# 1 "./nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra-gpio.h" 1
+# 40 "./nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra-gpio.h"
+# 1 "./nvidia/soc/tegra/kernel-include/dt-bindings/gpio/gpio.h" 1
+# 41 "./nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra-gpio.h" 2
+# 11 "./nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra210-jetson-tx1-p2597-2180-a01-devkit.h" 2
+# 27 "arch/arm64/boot/dts/../../../../nvidia/platform/t210/jetson/kernel-dts/tegra210-jetson-tx1-p2597-2180-a01-devkit-csi.dts" 2
+
+/ {
+ overlay-name = "Jetson TX1/TX2 CSI Connector";
+ compatible = "nvidia,p2597-0000+p2180-1000";
+
+ fragment@0 {
+  target = <&pinmux>;
+  __overlay__ {
+   pinctrl-names = "default";
+   pinctrl-0 = <&jetson_io_pinmux>;
+   jetson_io_pinmux: exp-header-pinmux {
+    csi-pin61 {
+     nvidia,pins = "uart1_tx_pu0";
+    };
+    csi-pin63 {
+     nvidia,pins = "uart1_rx_pu1";
+    };
+    csi-pin65 {
+
+     nvidia,pins = "uart1_cts_pu3";
+    };
+    csi-pin67 {
+
+     nvidia,pins = "uart1_rts_pu2";
+    };
+    csi-pin72 {
+     nvidia,pins = "dap4_sclk_pj7";
+     nvidia,function = "i2s4b";
+     nvidia,pin-group = "i2s4";
+     nvidia,pin-label = "i2s4b_sclk";
+     nvidia,pull = <0>;
+     nvidia,tristate = <0>;
+     nvidia,enable-input = <1>;
+    };
+    csi-pin74 {
+     nvidia,pins = "dap4_fs_pj4";
+     nvidia,function = "i2s4b";
+     nvidia,pin-group = "i2s4";
+     nvidia,pin-label = "i2s4b_fs";
+     nvidia,pull = <0>;
+     nvidia,tristate = <0>;
+     nvidia,enable-input = <1>;
+    };
+    csi-pin75 {
+     nvidia,pins = "cam_i2c_scl_ps2";
+    };
+    csi-pin76 {
+     nvidia,pins = "dap4_din_pj5";
+     nvidia,function = "i2s4b";
+     nvidia,pin-group = "i2s4";
+     nvidia,pin-label = "i2s4b_din";
+     nvidia,pull = <1>;
+     nvidia,tristate = <1>;
+     nvidia,enable-input = <1>;
+    };
+    csi-pin77 {
+     nvidia,pins = "cam_i2c_sda_ps3";
+    };
+    csi-pin78 {
+     nvidia,pins = "dap4_dout_pj6";
+     nvidia,function = "i2s4b";
+     nvidia,pin-group = "i2s4";
+     nvidia,pin-label = "i2s4b_dout";
+     nvidia,pull = <0>;
+     nvidia,tristate = <0>;
+     nvidia,enable-input = <0>;
+    };
+    csi-pin87 {
+     nvidia,pins = "gen3_i2c_scl_pf0";
+    };
+    csi-pin89 {
+     nvidia,pins = "gen3_i2c_sda_pf1";
+    };
+    csi-pin105 {
+     nvidia,pins = "gen1_i2c_scl_pj1";
+    };
+    csi-pin107 {
+     nvidia,pins = "gen1_i2c_sda_pj0";
+    };
+    };
+  };
+ };
+};

@@ -1,0 +1,6 @@
+tegra186-p3636-0001-p3509-0000-a01-hdr40.o: \
+ arch/arm64/boot/dts/../../../../nvidia/platform/t18x/lanai/kernel-dts/tegra186-p3636-0001-p3509-0000-a01-hdr40.dts \
+ nvidia/soc/tegra/kernel-include/dt-bindings/pinctrl/pinctrl-tegra.h \
+ nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra186-p3509-0000-p3636-0001.h \
+ nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra186-gpio.h \
+ nvidia/soc/tegra/kernel-include/dt-bindings/gpio/gpio.h

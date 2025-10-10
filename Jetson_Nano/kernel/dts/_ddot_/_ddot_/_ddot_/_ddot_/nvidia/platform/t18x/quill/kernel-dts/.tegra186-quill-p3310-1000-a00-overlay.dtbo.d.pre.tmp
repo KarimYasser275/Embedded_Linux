@@ -1,0 +1,2 @@
+tegra186-quill-p3310-1000-a00-overlay.o: \
+ arch/arm64/boot/dts/../../../../nvidia/platform/t18x/quill/kernel-dts/tegra186-quill-p3310-1000-a00-overlay.dts

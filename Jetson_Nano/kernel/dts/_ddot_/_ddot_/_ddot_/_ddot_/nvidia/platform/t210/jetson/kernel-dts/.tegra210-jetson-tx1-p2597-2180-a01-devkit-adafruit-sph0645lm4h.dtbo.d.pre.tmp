@@ -1,0 +1,7 @@
+tegra210-jetson-tx1-p2597-2180-a01-devkit-adafruit-sph0645lm4h.o: \
+ arch/arm64/boot/dts/../../../../nvidia/platform/t210/jetson/kernel-dts/tegra210-jetson-tx1-p2597-2180-a01-devkit-adafruit-sph0645lm4h.dts \
+ nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra210-jetson-tx1-p2597-2180-a01-devkit.h \
+ nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra-gpio.h \
+ nvidia/soc/tegra/kernel-include/dt-bindings/gpio/gpio.h \
+ nvidia/platform/tegra/common/kernel-dts/overlays/jetson-adafruit-sph0645lm4h.dts \
+ nvidia/soc/tegra/kernel-include/dt-bindings/pinctrl/pinctrl-tegra.h

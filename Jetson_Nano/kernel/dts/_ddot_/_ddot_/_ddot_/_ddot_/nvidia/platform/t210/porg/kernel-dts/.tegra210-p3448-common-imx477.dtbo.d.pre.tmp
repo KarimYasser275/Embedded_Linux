@@ -1,0 +1,2 @@
+tegra210-p3448-common-imx477.o: \
+ arch/arm64/boot/dts/../../../../nvidia/platform/t210/porg/kernel-dts/tegra210-p3448-common-imx477.dts

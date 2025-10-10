@@ -1,0 +1,126 @@
+# 0 "arch/arm64/boot/dts/../../../../nvidia/platform/t18x/lanai/kernel-dts/tegra186-p3636-0001-p3509-0000-a01-fe-pi-audio.dts"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "arch/arm64/boot/dts/../../../../nvidia/platform/t18x/lanai/kernel-dts/tegra186-p3636-0001-p3509-0000-a01-fe-pi-audio.dts"
+# 10 "arch/arm64/boot/dts/../../../../nvidia/platform/t18x/lanai/kernel-dts/tegra186-p3636-0001-p3509-0000-a01-fe-pi-audio.dts"
+/dts-v1/;
+/plugin/;
+
+# 1 "./nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra186-p3509-0000-p3636-0001.h" 1
+# 9 "./nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra186-p3509-0000-p3636-0001.h"
+# 1 "./nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra186-gpio.h" 1
+# 29 "./nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra186-gpio.h"
+# 1 "./nvidia/soc/tegra/kernel-include/dt-bindings/gpio/gpio.h" 1
+# 30 "./nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra186-gpio.h" 2
+# 10 "./nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra186-p3509-0000-p3636-0001.h" 2
+# 14 "arch/arm64/boot/dts/../../../../nvidia/platform/t18x/lanai/kernel-dts/tegra186-p3636-0001-p3509-0000-a01-fe-pi-audio.dts" 2
+# 1 "./nvidia/platform/tegra/common/kernel-dts/overlays/jetson-fe-pi-audio.dts" 1
+# 9 "./nvidia/platform/tegra/common/kernel-dts/overlays/jetson-fe-pi-audio.dts"
+# 1 "./nvidia/soc/tegra/kernel-include/dt-bindings/pinctrl/pinctrl-tegra.h" 1
+# 10 "./nvidia/platform/tegra/common/kernel-dts/overlays/jetson-fe-pi-audio.dts" 2
+
+/ {
+ overlay-name = "FE-PI Audio V1 and Z V2";
+ jetson-header-name = "Jetson 40pin Header";
+ compatible = "nvidia,p3509-0000+p3636-0001";
+
+ fragment@0 {
+  target-path = "/";
+  __overlay__ {
+   clocks {
+    sgtl5000_mclk: sgtl5000_mclk {
+     compatible = "fixed-clock";
+     #clock-cells = <0>;
+     clock-frequency = <12288000>;
+     clock-output-names = "sgtl5000-mclk";
+     status = "okay";
+    };
+   };
+  };
+ };
+
+ fragment@1 {
+  target = <&hdr40_i2c1>;
+  __overlay__ {
+   #address-cells = <1>;
+   #size-cells = <0>;
+
+   sgtl5000: sgtl5000@0a {
+    compatible = "fsl,sgtl5000";
+    reg = <0x0a>;
+    clocks = <&sgtl5000_mclk>;
+    micbias-resistor-k-ohms = <2>;
+    micbias-voltage-m-volts = <3000>;
+    VDDA-supply = <&hdr40_vdd_3v3>;
+    VDDIO-supply = <&hdr40_vdd_3v3>;
+    status = "okay";
+   };
+  };
+ };
+
+ fragment@2 {
+  target = <&tegra_sound>;
+  __overlay__ {
+   nvidia,audio-routing =
+    "x Headphone", "x HP_OUT",
+    "x MIC_IN", "x Mic",
+    "x ADC", "x Mic Bias",
+    "x LINE_IN", "x Line In",
+    "x Line Out", "x LINE_OUT";
+  };
+ };
+
+ fragment@3 {
+  target = <&hdr40_snd_link_i2s>;
+  __overlay__ {
+   link-name = "fe-pi-audio-z-v2";
+   codec-dai = <&sgtl5000>;
+   codec-dai-name = "sgtl5000";
+   bitclock-master;
+   frame-master;
+  };
+ };
+
+ fragment@4 {
+  target = <&pinmux>;
+  __overlay__ {
+   pinctrl-names = "default";
+   pinctrl-0 = <&jetson_io_pinmux>;
+
+   jetson_io_pinmux: exp-header-pinmux {
+    hdr40-pin12 {
+     nvidia,pins = "dap1_sclk_pj0";
+     nvidia,function = "i2s1";
+     nvidia,pull = <1>;
+     nvidia,tristate = <0>;
+     nvidia,enable-input = <1>;
+    };
+
+    hdr40-pin35 {
+     nvidia,pins = "dap1_fs_pj3";
+     nvidia,function = "i2s1";
+     nvidia,pull = <1>;
+     nvidia,tristate = <0>;
+     nvidia,enable-input = <1>;
+    };
+
+    hdr40-pin38 {
+     nvidia,pins = "dap1_din_pj2";
+     nvidia,function = "i2s1";
+     nvidia,pull = <1>;
+     nvidia,tristate = <1>;
+     nvidia,enable-input = <1>;
+    };
+
+    hdr40-pin40 {
+     nvidia,pins = "dap1_dout_pj1";
+     nvidia,function = "i2s1";
+     nvidia,pull = <1>;
+     nvidia,tristate = <0>;
+     nvidia,enable-input = <0>;
+    };
+   };
+  };
+ };
+};
+# 15 "arch/arm64/boot/dts/../../../../nvidia/platform/t18x/lanai/kernel-dts/tegra186-p3636-0001-p3509-0000-a01-fe-pi-audio.dts" 2

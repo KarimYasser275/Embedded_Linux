@@ -1,0 +1,7 @@
+tegra194-p2888-0004-e3900-0000-adafruit-sph0645lm4h.o: \
+ arch/arm64/boot/dts/../../../../nvidia/platform/t19x/mccoy/kernel-dts/tegra194-p2888-0004-e3900-0000-adafruit-sph0645lm4h.dts \
+ nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra194-p2888-0004-e3900-0000.h \
+ nvidia/soc/t19x/kernel-include/dt-bindings/gpio/tegra194-gpio.h \
+ nvidia/soc/tegra/kernel-include/dt-bindings/gpio/gpio.h \
+ nvidia/platform/tegra/common/kernel-dts/overlays/jetson-adafruit-sph0645lm4h.dts \
+ nvidia/soc/tegra/kernel-include/dt-bindings/pinctrl/pinctrl-tegra.h

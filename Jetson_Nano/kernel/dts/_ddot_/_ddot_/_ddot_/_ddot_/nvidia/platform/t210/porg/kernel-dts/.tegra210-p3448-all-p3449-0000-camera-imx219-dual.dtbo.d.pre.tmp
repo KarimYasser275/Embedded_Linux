@@ -1,0 +1,2 @@
+tegra210-p3448-all-p3449-0000-camera-imx219-dual.o: \
+ arch/arm64/boot/dts/../../../../nvidia/platform/t210/porg/kernel-dts/tegra210-p3448-all-p3449-0000-camera-imx219-dual.dts

@@ -1,0 +1,7 @@
+tegra210-p3448-0000-p3449-0000-a02-hdr40.o: \
+ arch/arm64/boot/dts/../../../../nvidia/platform/t210/porg/kernel-dts/tegra210-p3448-0000-p3449-0000-a02-hdr40.dts \
+ nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra210-p3448-0000-p3449-0000-a02.h \
+ nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra-gpio.h \
+ nvidia/soc/tegra/kernel-include/dt-bindings/gpio/gpio.h \
+ arch/arm64/boot/dts/../../../../nvidia/platform/t210/porg/kernel-dts/tegra210-p3448-0000-p3449-0000-hdr40.dtsi \
+ nvidia/soc/tegra/kernel-include/dt-bindings/pinctrl/pinctrl-tegra.h

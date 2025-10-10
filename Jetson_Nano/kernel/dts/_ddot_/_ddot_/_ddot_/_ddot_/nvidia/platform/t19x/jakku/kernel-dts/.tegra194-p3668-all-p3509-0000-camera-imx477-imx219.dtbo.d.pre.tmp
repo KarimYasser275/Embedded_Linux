@@ -1,0 +1,2 @@
+tegra194-p3668-all-p3509-0000-camera-imx477-imx219.o: \
+ arch/arm64/boot/dts/../../../../nvidia/platform/t19x/jakku/kernel-dts/tegra194-p3668-all-p3509-0000-camera-imx477-imx219.dts

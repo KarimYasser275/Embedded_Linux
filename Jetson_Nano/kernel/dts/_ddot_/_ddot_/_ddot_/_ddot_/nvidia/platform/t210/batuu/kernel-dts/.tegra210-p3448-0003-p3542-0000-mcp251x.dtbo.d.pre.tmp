@@ -1,0 +1,7 @@
+tegra210-p3448-0003-p3542-0000-mcp251x.o: \
+ arch/arm64/boot/dts/../../../../nvidia/platform/t210/batuu/kernel-dts/tegra210-p3448-0003-p3542-0000-mcp251x.dts \
+ nvidia/soc/tegra/kernel-include/dt-common/jetson/tegra210-p3448-0003-p3542-0000.h \
+ nvidia/soc/tegra/kernel-include/dt-bindings/gpio/tegra-gpio.h \
+ nvidia/soc/tegra/kernel-include/dt-bindings/gpio/gpio.h \
+ nvidia/platform/tegra/common/kernel-dts/overlays/jetson-mcp251x.dts \
+ nvidia/soc/tegra/kernel-include/dt-bindings/pinctrl/pinctrl-tegra.h
